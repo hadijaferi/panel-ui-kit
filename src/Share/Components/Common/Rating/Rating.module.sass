@@ -1,0 +1,40 @@
+@import "../../../../Resources/css/base"
+
+.starStep
+  display: inline-flex
+  .item
+    cursor: pointer
+    font-size: 20px
+    font-weight: bold
+    position: relative
+    i
+      font-size: $fontSize-24
+      color: $gray-cbcbcb
+      line-height: 1
+      transition: all 0.05s ease-in-out
+    &.active
+      i
+        color: $red-ed303d
+    + .item
+      padding-right: $space-4
+  &:not(.justShow)
+    &:hover
+      .item
+        i
+          color: $red-ed303d
+        &:hover
+          i
+            text-shadow: 0 0 5px rgba($red-ed303d , .4)
+          ~ .item
+            i
+              color: $gray-cbcbcb
+  &.justShow
+    *
+      pointer-events: none
+  &.large
+    i
+      font-size: $fontSize-32
+  &.small
+    i
+      font-size: $fontSize-18
+

@@ -1,0 +1,12 @@
+=font-face($family, $filename, $folder, $style: normal, $weight: 300, $weightName: "", $hsaSvg: false)
+  @font-face
+    font-family: $family
+    font-style: $style
+    font-weight: $weight
+    src: url('../../fonts/#{$folder}/eot/#{$filename}-#{$weightName}.eot')
+
+    @if ($hsaSvg)
+      src: url('../../fonts/#{$folder}/eot/#{$filename}-#{$weightName}.eot?#iefix') format('embedded-opentype'), url('../../fonts/#{$folder}/woff/#{$filename}-#{$weightName}.woff') format("woff"), url('../../fonts/#{$folder}/ttf/#{$filename}-#{$weightName}.ttf') format("truetype"), url('../../fonts/#{$folder}/svg/#{$filename}-#{$weightName}.svg') format("svg")
+
+    @else
+      src: url('../../fonts/#{$folder}/eot/#{$filename}-#{$weightName}.eot?#iefix') format('embedded-opentype'), url('../../fonts/#{$folder}/woff/#{$filename}-#{$weightName}.woff') format("woff"), url('../../fonts/#{$folder}/ttf/#{$filename}-#{$weightName}.ttf') format("truetype")

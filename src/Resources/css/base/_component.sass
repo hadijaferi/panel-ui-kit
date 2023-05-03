@@ -1,0 +1,266 @@
+@import "../variables"
+
+//////////////// card
+.card
+  background: $colorWhite
+  border-radius: $radius-16
+  overflow: hidden
+
+  &__shadow
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06)
+
+  &__colorGray
+    background: $gray-f9f9f9
+
+  &__noRadius
+    border-radius: 0
+
+  &__radius8
+    border-radius: $radius-8
+
+//////////////// alert
+.alert
+  display: flex
+  align-items: center
+  padding: $space-16
+  text-align: right
+  background: transparent
+  border-radius: $radius-16
+
+  i
+    font-size: $fontSize-24
+    margin-left: $space-8
+    margin-bottom: 4px
+
+  &__green
+    background: $green-f3fdfa
+
+    i
+      background: $green-00966d
+
+  &__yellow
+    background: $yellow-fff8e1
+
+    i
+      color: $yellow-daa43d
+
+  &__blue
+    background: $blue-ebf7ff
+
+    i
+      background: $blue-168fdf
+
+  &__red
+    background: $pink-fff2f7
+
+    i
+      background: $pink-c30052
+
+
+//////////////// avatar
+.avatar
+  width: 56px
+  min-width: 56px
+  height: 56px
+  border-radius: 100%
+  background: url("../../image/defaultAvatar.jpg") no-repeat center / cover
+  border: solid 1px $gray-5e5e5e
+  overflow: hidden
+
+  &__mobile
+    width: 32px
+    min-width: 32px
+    height: 32px
+
+  &__small
+    width: 48px
+    min-width: 48px
+    height: 48px
+
+  &__medium
+    width: 88px
+    min-width: 88px
+    height: 88px
+
+  &__size
+    width: 40px
+    min-width: 40px
+    height: 40px
+
+
+  &__padding
+    background: $colorWhite no-repeat center / 65%
+    padding: $space-8
+
+  &__square
+    border-radius: 0
+
+  &__no-border
+    border: none
+
+
+///////////////// table
+.table
+  overflow: hidden
+  border-radius: $radius-8
+  text-align: right
+
+  table
+    border-collapse: collapse
+
+    tr
+      td,
+      th
+        border-left: solid 1px $gray-f2f2f2
+
+        &:last-child
+          border-left: none
+
+    thead
+      background: $gray-f9f9f9
+      border-bottom: solid 1px $gray-f2f2f2
+
+      tr
+        th
+          font-weight: bold
+          padding: $space-16
+
+    tbody
+      tr
+        td
+          padding: $space-16
+          font-weight: $fontWeight-500
+
+        &:nth-child(2n - 1)
+          background: $gray-f9f9f9
+
+///////////////// Chips
+.chips
+  padding: $space-4 $space-16
+  color: $gray-5e5e5e
+  display: inline-block
+  background: $gray-f2f2f2
+  border: solid 1px transparent
+  font-weight: $fontWeight-500
+  font-size: $fontSize-12
+  border-radius: 35px
+  margin-top: $space-4
+  margin-bottom: $space-4
+  cursor: pointer
+
+  &:hover
+    border-color: rgba(0, 0, 0, 0.07)
+
+  ~ .chips
+    margin-right: $space-8
+
+  &__red
+    background: $red-ed303d
+    color: $colorWhite
+
+  &__blue
+    background: $blue-18a0ff
+    color: $colorWhite
+
+  &__green
+    background: $green-00ba88
+    color: $colorWhite
+
+  &__large
+    font-size: $fontSize-14
+    font-weight: $fontWeight-700
+
+  &__bordered
+    border-color: $gray-5e5e5e
+    background: none
+    color: $gray-5e5e5e
+
+    &.chips__white
+      border-color: $colorWhite
+      color: $colorWhite
+
+///////////////// breadcrumb
+
+.breadcrumb
+  ul
+    display: flex
+    align-items: center
+
+    li
+      + li
+        margin-right: $space-8
+
+      &:last-child
+        font-weight: $fontWeight-700
+
+        i
+          display: none
+
+      a
+        font-size: $fontSize-12
+
+        &:hover
+          text-decoration: underline
+          color: $blue-18a0ff
+
+      i
+        font-size: 9px
+        margin-right: 8px
+
+
+///////////////// color
+.tag_color
+  display: inline-flex
+  align-items: center
+
+  &__icon
+    border-radius: 100%
+    width: 16px
+    min-width: 16px
+    display: inline-block
+    height: 16px
+    border: solid 1px rgba(0, 0, 0, 0.04)
+    margin: 0 $space-4
+    position: relative
+    top: -2px
+
+///////////////// vertical text length scroll
+.scroll-x
+  overflow-x: auto
+  position: relative
+  +scrollbars(transparent)
+  > *
+    width: max-content
+    width: -moz-max-content
+    padding-left: $space-24
+
+//////////////// Collapse
+.collapse
+  .icon
+    transition: all .2s ease-in-out
+  &.active
+    .icon
+      transform: rotate(-180deg) !important
+
+/////////////// Shine
+.shine
+  position: absolute
+
+  &::after
+    background: linear-gradient(to right, fade_out(#fff, 1) 0%, fade_out(#fff, 0.85) 100%)
+    content: ""
+    display: block
+    height: 100%
+    left: -75%
+    position: absolute
+    top: 0
+    transform: skewX(-25deg)
+    width: 100%
+    z-index: 2
+    animation: shine 1.2s ease-in-out infinite
+
+@keyframes shine
+  0%
+    left: -75%
+  100%
+    left: 125%

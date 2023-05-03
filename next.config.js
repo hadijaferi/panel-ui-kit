@@ -1,6 +1,14 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  reactStrictMode: true,
-}
+const path = require('path');
+const withPlugins = require('next-compose-plugins');
 
-module.exports = nextConfig
+const withSvgr = require('next-plugin-svgr');
+module.exports = withPlugins(
+    [withSvgr],
+    {
+      sassOptions: {
+        includePaths: [path.join(__dirname)],
+      }
+    }
+)
+
