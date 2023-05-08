@@ -1,0 +1,29 @@
+@import "src/Resources/css/base"
+
+.emptyComment
+  margin-bottom: $space-32
+  .description
+    font-size: $fontSize-16
+    font-weight: $fontWeight-700
+    margin: $space-24
+    color: #5E5E5E
+
+  .addComment
+    .plusIcon, .addCommentText
+      color: #168FDF
+      font-size: $fontSize-16
+      font-weight: $fontWeight-700
+
+    .plusIcon
+      margin-left: $space-8
+
+    .NotFoundImage
+      width: 100%
+      height: 100%
+      max-width: 196px
+      max-height: 167px
+
++breakpoint(mobile)
+  .NotFoundImage
+    max-width: 130px
+    max-height: 110px

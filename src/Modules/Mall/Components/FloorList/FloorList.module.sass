@@ -1,0 +1,45 @@
+@import "../../../../Resources/css/base"
+.listStep
+  width: 100%
+  max-width: 400px
+
+  ul
+    .listItem
+      color: var(--floor-list-color)
+      padding: $space-16
+      border-radius: $radius-16
+      background: var(--floor-list-bg)
+      display: flex
+      justify-content: space-between
+      align-items: center
+      cursor: pointer
+      transition: all 0.3s ease-in-out
+
+      + .listItem
+        margin-top: $space-8
+      &:hover
+        background: $red-ed303d
+        color: #fff
+        transition: all 0.1s ease-in-out
+
+  //&.lighten
+  //  ul
+  //    +scrollbars(var(--scroll), 4px)
+  //    .listItem
+  //      color: $gray-2f2f2f
+  //      background: $colorWhite
+  //      + .listItem
+  //        margin-top: $space-8
+  //      &:hover
+  //        background: $red-ed303d
+  //        color: #fff
+  //        transition: all 0.1s ease-in-out
+$small : 1024px
+@media screen and (min-width: $small)
+  .listStep
+    ul
+      overflow: auto
+      max-height: 60vh
+      min-height: 500px
+      +scrollbars(var(--scroll), 4px)
+      padding-left: 4px

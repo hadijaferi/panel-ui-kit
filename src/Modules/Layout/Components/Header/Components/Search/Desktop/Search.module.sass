@@ -1,0 +1,57 @@
+@import "../../../../../../../Resources/css/base"
+
+.acSearch
+  display: flex
+  position: relative
+  height: 48px
+
+
+  .searchInput
+    width: 100%
+    height: 100%
+    background: $gray-f2f2f2
+    border-radius: $radius-16
+    position: relative
+    overflow: hidden
+    z-index: 2
+
+    input
+      width: 100%
+      height: 100%
+      //position: absolute
+      //top: 0
+      //right: 0
+      //bottom: 0
+      //left: 0
+      padding: 2px $space-24 0 70px
+      font-size: $fontSize-12
+      filter: none
+
+      &:-webkit-autofill,
+      &:-webkit-autofill:hover,
+      &:-webkit-autofill:focus,
+      &:-webkit-autofill:active
+        -webkit-box-shadow: 0 0 0 30px $gray-f2f2f2 inset !important
+      &::-webkit-input-placeholder
+        font-size: $fontSize-12
+        color: $gray-979797
+  .button
+    position: absolute
+    left: 0
+    top: 0
+    bottom: 0
+    width: 48px
+    z-index: 3
+.searchResultBox
+  position: absolute
+  top: calc(100% - 4px)
+  right: 0
+  left: 0
+  z-index: 1
+  transition: $transitionBaseFaster
+  opacity: 0
+  visibility: hidden
+  &.active
+    top: calc(100% - 10px)
+    opacity: 1
+    visibility: visible

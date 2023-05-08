@@ -1,0 +1,33 @@
+@import "./src/Resources/css/base"
+.chatBoxWrapper
+  height: 100%
+  background-color: $gray-f9f9f9
+  position: relative
+  .chatParent
+    position: relative
+    overflow: hidden
+
+.scrollToBottom
+  cursor: pointer
+  width: $space-32
+  height: $space-32
+  background-color: white
+  box-shadow: 0 0 5px $gray-e6e6e6
+  color: $gray-979797
+  border-radius: 50%
+  position: absolute
+  bottom: 0
+  opacity: 0
+  left: $space-32
+  z-index: 1
+  transition: bottom 0.3s ease-in-out , opacity 0.3s ease-in-out
+  pointer-events: none
+
+.slideInAnimation
+  pointer-events: auto
+  bottom: 20px
+  opacity: 1
+
+.noChatSelected
+  margin-bottom: $space-24
+

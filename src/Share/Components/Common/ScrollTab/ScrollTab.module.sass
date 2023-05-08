@@ -1,0 +1,33 @@
+@import "../../../../Resources/css/base"
+
+.acScrollTab
+  position: relative
+  .titleCard
+    background: $colorWhite
+    border-radius: $radius-16
+    padding: 0 $space-16
+    position: sticky
+    top: 105px
+    z-index: 4
+    box-shadow: 0 0 5px 2px rgba($gray-f2f2f2 , 0.5) , 0 0 0 1px $gray-f2f2f2
+    margin-bottom: $space-16
+    .title
+      min-width: 200px
+      padding-left: $space-16
+      color: $gray-5e5e5e
+      i
+        margin-left: $space-8
+
+    .titleStep
+      display: flex
+      div
+        border-bottom: solid 2px transparent
+        padding: $space-16
+        cursor: pointer
+        display: block
+        transition: all 0.2s ease-in-out
+        &.active
+          border-bottom-color: $red-ed303d
+          color: $red-ed303d
+
+

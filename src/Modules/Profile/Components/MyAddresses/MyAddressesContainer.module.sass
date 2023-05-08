@@ -1,0 +1,51 @@
+@import "../../../../Resources/css/base"
+
+.AddNewAddress
+  background-color: $gray-f9f9f9
+  border: 1px dashed $gray-979797
+  border-radius: $space-16
+  height: 100%
+
+  display: flex
+  justify-content: center
+  align-items: center
+
+  cursor: pointer
+
+  div
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    span
+      margin-top: $space-16
+
+.modalBody
+  position: relative
+  overflow: hidden
+
+  .mapContainer
+    position: relative
+    width: 100%
+    height: 400px
+    margin-bottom: 16px
+
+    .pin
+      width: 48px
+      height: 48px
+      position: absolute
+      z-index: 999
+      left: calc(50% - 25px)
+      top: calc(50% - 44px)
+      transition: all 0.4s ease
+
+      user-select: none
+      -moz-user-select: none
+      -webkit-user-drag: none
+      -webkit-user-select: none
+      -ms-user-select: none
+
+.inputSearch
+  &:global(.inputWrapper)
+    input
+      border-top: none !important

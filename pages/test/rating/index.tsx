@@ -1,7 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import Rating from "../../../src/Share/Components/Common/Rating/Rating";
 
- const RatingTest =()=> {
+export default class Index extends Component {
+  render() {
     return (
       <div className="container m-t-32">
         <div className="row flex-x-around">
@@ -60,7 +61,8 @@ import Rating from "../../../src/Share/Components/Common/Rating/Rating";
                   <Rating rate={3} justShow />
                 </div>
                 <div className="col-8">
-                  <Rating rate={3}  />
+                  با آیکون های مربعی فقط آیکون هاش هنوز نرسیده گیر ندین
+                  <Rating rate={3} squareIcon />
                 </div>
               </div>
             </div>
@@ -69,6 +71,4 @@ import Rating from "../../../src/Share/Components/Common/Rating/Rating";
       </div>
     );
   }
-export default RatingTest
-
-
+}

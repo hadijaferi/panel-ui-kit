@@ -1,7 +1,7 @@
-import React from "react";
+import React, { Component, ReactNode } from "react";
 import style from "./Rating.module.sass";
 import generateClassName from "../../../Helpers/Dom/generateClassName";
-import {RatedIco} from "@/src/Resources/icon";
+import Icon from "../Icon/Icon";
 
 type starSize = "small" | "medium" | "large";
 
@@ -15,33 +15,34 @@ interface IRatingProps {
   name?: string;
 }
 
-const  Rating =(props:IRatingProps)=>  {
+class Rating extends Component<IRatingProps> {
+  render(): ReactNode {
     return (
       <div
         className={generateClassName([
           style.starStep,
-          props.justShow && style.justShow,
-          props.size && style[`${props.size}`],
-          props.className,
+          this.props.justShow && style.justShow,
+          this.props.size && style[`${this.props.size}`],
+          this.props.className,
         ])}>
         {[...new Array(5)].map((_x, index) => (
           <div
             key={`rating${index}`}
             className={generateClassName([
               style.item,
-              props.rate > index && style.active,
+              this.props.rate > index && style.active,
             ])}
             onClick={() => {
-              if (props.onChange) {
-                props.onChange(index + 1);
+              if (this.props.onChange) {
+                this.props.onChange(index + 1);
               }
             }}>
-              <RatedIco/>
+            <Icon name={this.props.squareIcon ? "star-squar" : "star-fill"} />
           </div>
         ))}
       </div>
     );
-
+  }
 }
 
 export default Rating;

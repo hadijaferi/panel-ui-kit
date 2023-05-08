@@ -1,0 +1,44 @@
+@import "../../../../Resources/css/base"
+
+.titleCard
+  background: $colorWhite
+  border-radius: $radius-16
+  padding: 0 $space-16
+  overflow: hidden
+  z-index: 5
+  & li
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+  .title
+    min-width: 200px
+    padding-left: $space-16
+    color: $gray-5e5e5e
+
+  .titleStep
+    display: flex
+    li
+      display: block
+      padding: $space-16
+      cursor: pointer
+      border-bottom: solid 2px transparent
+      transition: all 0.2s ease-in-out
+      &.active
+        border-bottom-color: $red-ed303d
+        color: $red-ed303d
+  &.sticky
+    position: sticky
+    top: 105px
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03)
+.activeUnderline
+  width: 100%
+  height: 2px
+  border-top-right-radius: $radius-8
+  border-top-left-radius: $radius-8
+  position: absolute
+  bottom: -2px
+  left: 0
+  background-color: $red-ed303d
+

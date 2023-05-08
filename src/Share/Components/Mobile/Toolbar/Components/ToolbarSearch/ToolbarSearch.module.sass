@@ -1,0 +1,27 @@
+@import "../../../../../../Resources/css/base"
+
+.searchContainer
+  position: absolute
+  bottom: 100%
+  left: 0
+  width: 100%
+  height: 100%
+  background: $colorWhite
+  z-index: 10
+  display: flex
+  justify-content: space-between
+  flex-direction: row
+  align-items: center
+  padding: 0 $space-8
+  transition: $transitionBase
+  opacity: 0
+
+  input
+    width: 100%
+    line-height: 55px
+    padding-right: $space-8
+
+  &.show
+    opacity: 1
+    visibility: visible
+    bottom: 0

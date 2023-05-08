@@ -1,0 +1,23 @@
+@import "./src/Resources/css/base"
+
+.chatBoxMessagesWrapper
+  position: relative
+  width: 100%
+  overflow-y: scroll
+  overflow-x: hidden
+  padding: 0 $space-16 20px
+  height: 585px
+  +scrollbars(rgba($gray-cbcbcb,0.4) , 6px , 6px)
+  &:hover
+    +scrollbars($gray-cbcbcb , 6px , 6px)
+
+
+.loadingAnimation
+  width: 100%
+  height: 100%
+  display: flex
+  justify-content: center
+  align-items: center
+  & img
+    width: 100px
+    height: 100px

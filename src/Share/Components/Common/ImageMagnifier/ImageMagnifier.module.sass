@@ -1,0 +1,18 @@
+@import "../../../../../src/Resources/css/base"
+
+.acImageMagnifier
+  background-position: 50% 50%
+  position: relative !important
+  width: 500px !important
+  overflow: hidden !important
+  cursor: zoom-in !important
+
+  img
+    transition: opacity .5s !important
+    display: block !important
+    width: 100% !important
+
+  &:hover
+    img
+      opacity: 0 !important
+

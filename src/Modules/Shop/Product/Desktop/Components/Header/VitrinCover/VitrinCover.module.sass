@@ -1,0 +1,96 @@
+@import "../../../../../../../Resources/css/base"
+
+
+.vitrinCover
+  border-radius: $radius-16
+  overflow: hidden
+
+  .top
+    background: no-repeat center / cover
+    width: 100%
+    height: 364px
+    position: relative
+
+    &::before
+      position: absolute
+      right: 0
+      top: 0
+      width: 100%
+      height: 100%
+      background: linear-gradient(180deg, rgba(242, 242, 242, 0) 0%, #000000 80.25%)
+      opacity: 0.6
+      content: ""
+
+    .vitrinInfo
+      position: absolute
+      bottom: -10px
+      right: $space-32
+      display: flex
+      color: $colorWhite
+
+      .parentProfile
+        position: relative
+        width: 88px
+        height: 88px
+        margin-left: $space-16
+
+      .profileProductShop
+        display: flex
+        align-items: center
+        justify-content: center
+        overflow: hidden
+        box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.16)
+        border: 4px solid $gray-2f2f2f
+        +circle(88px)
+
+        .tickImg
+          width: 24px
+          height: 24px
+          position: absolute
+          bottom: $space-4
+          left: 0
+      //.logo
+      //  position: relative
+      //  max-width: 88px
+      //  max-height: 88px
+      //  margin-left: $space-16
+      //  box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.16)
+      //  border: 4px solid $gray-2f2f2f
+      //  +circle(88px)
+      //  .tickImg
+      //    position: absolute
+      //    bottom: 30px
+      //    left: 0
+      .left
+        .name
+          font-size: $fontSize-24
+          font-weight: $fontWeight-700
+          margin: $space-4 0
+
+        span
+          font-weight: $fontWeight-500
+          font-size: $fontSize-14
+
+
+    .btns
+      position: absolute
+      left: $space-32
+      bottom: -$space-24
+
+      > a
+        display: flex
+        align-items: center
+        justify-content: center
+        color: $colorWhite
+        font-size: $fontSize-24
+        box-shadow: 0 0 0 3px rgba(237, 49, 62, 0.16)
+        +circle(48px, $red-ed303d)
+
+        &:nth-child(2)
+          margin-right: $space-16
+
+  .bottom
+    display: flex
+    background: $colorWhite
+    align-items: center
+    padding-right: 42px

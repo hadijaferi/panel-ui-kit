@@ -1,0 +1,55 @@
+@import "../../../../../Resources/css/base"
+
+.detailWrapper
+  padding: $space-32
+  margin-bottom: $space-32
+  background: $colorWhite
+.ulComment
+  padding-top: $space-16
+  li
+    position: relative
+    padding-right: 13px
+    &:before
+      content: ''
+      position: absolute
+      right: 0
+      top: 10px
+      background: $gray-cbcbcb
+      width: 5px
+      height: 5px
+      border-radius: 10px
+
+
+
+.productInfo
+  .wrapper
+    display: grid
+    grid-template-columns: 156px 1fr
+    grid-gap: $space-16
+
+.vector
+  max-height: 370px
+
+ul.listStep
+  padding: 0 $space-16
+  padding-top: 32px
+  li
+    padding-bottom: $space-16
+    &:last-of-type
+      padding-bottom: 0
+    label
+      display: flex
+      width: fit-content
+      cursor: pointer
+    .show
+      width: 20px
+      height: 20px
+      margin-left: $space-8
+      border-radius: 4px
+      border: 1px solid $gray-cbcbcb
+      transition: $transitionBaseFaster
+    input
+      &:checked
+        + div
+          .show
+            border-color: #000

@@ -1,0 +1,152 @@
+@import "../../../../Resources/css/base"
+
+.iconContainer
+  position: relative
+  margin-left: $space-16
+
+  .badge
+    position: absolute
+    right: 0
+    bottom: 0
+    transform: translate(50%, 25%)
+    +circle($space-16)
+    color: $colorWhite
+    font-size: $fontSize-12
+    text-align: center
+    background: $red-ed303d
+
+.sidebar
+  position: relative
+  min-width: 256px
+  max-width: 256px
+  margin-left: $space-16
+
+
+  .sidebarContainer
+    position: sticky
+    top: 116px
+    bottom: 0
+    right: 0
+    z-index: 10
+
+    .sidebarInfo
+      border-radius: $radius-16
+      background: $colorWhite
+      padding: $space-4
+      margin-bottom: $space-16
+
+      > .top
+        background: $gray-f2f2f2
+        border-radius: ($radius-16 - 2px) ($radius-16 - 2px) 0 0
+        position: relative
+        height: 84px
+        padding-right: 84px + 30px
+        padding-top: $space-24
+        z-index: 2
+        margin-bottom: $space-24
+
+        .avatar
+          position: absolute
+          right: 20px
+          top: 20px
+          overflow: hidden
+          +circle(84px, $colorWhite)
+
+          img
+            margin: $space-4
+            border-radius: 100px
+            width: calc(100% - 8px)
+            height: calc(100% - 8px)
+
+        .name
+          color: $gray-4e4e4e
+          font-size: $fontSize-16
+          font-weight: $fontWeight-700
+
+        .mobile
+          font-size: $fontSize-14
+          color: $gray-5e5e5e
+          font-weight: $fontWeight-400
+
+      > .bottom
+        position: relative
+        z-index: 1
+        display: flex
+        flex-direction: row
+        align-items: center
+
+        .or
+          width: 1px
+          background: $gray-e6e6e6
+          height: 24px
+          margin: 0 $space-4
+
+        .profileBtn
+          color: $gray-5e5e5e
+          font-weight: $fontWeight-400
+          font-size: $fontSize-14
+
+
+
+
+
+
+        > *
+          width: 100%
+
+    .sidebarMenu
+      border-radius: $radius-16
+      background: $colorWhite
+      padding: $space-16 $space-16 0 $space-16
+
+      > .top
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+
+        > *
+          width: 100%
+
+      > .middle
+        margin: $space-32 0
+
+        .menu
+          margin-bottom: $space-16
+
+          > .header
+            font-size: $fontSize-16
+            font-weight: $fontWeight-700
+            text-align: right
+
+          > .content
+            ul
+              li
+                margin: 0 -16px
+                .btn
+                  text-align: center
+                  justify-content: right
+                  padding: 0 $space-24
+                  display: flex
+                  align-items: center
+                  min-height: 40px
+                  max-height: 40px
+                  color: $gray-5e5e5e
+                  font-weight: $fontWeight-400
+
+
+                  &.active
+                    color: $red-ed303d
+                    font-weight: $fontWeight-500
+
+                  .title
+                    font-size: $fontSize-14
+
+
+      > .bottom
+        border-top: 1px solid $gray-e6e6e6
+
+        .logoutBtn
+          font-size: $fontSize-14
+          font-weight: $fontWeight-700
+          color: $gray-4e4e4e
+

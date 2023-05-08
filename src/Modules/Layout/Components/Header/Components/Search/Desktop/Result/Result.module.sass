@@ -1,0 +1,81 @@
+@import "../../../../../../../../Resources/css/base"
+
+.searchResultBox
+  display: flex
+  flex-direction: column
+  padding: $space-32 0 $space-16
+  background: $colorWhite
+  box-shadow: 0 0 21px rgba(0, 0, 0, 0.04)
+  border-radius: 0 0 $radius-16 $radius-16
+
+  //section1
+  .resultShopItem
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin-bottom: $space-8
+
+    &:last-of-type
+      margin-bottom: 0
+
+    .avatarProfile
+      border-color: $gray-cbcbcb !important
+
+  .hr
+    width: calc(100% - 16px)
+    margin: $space-16 auto 0
+    border-color: $gray-f2f2f2
+
+  .resultListWrap
+    display: grid
+    grid-template-columns: 49% 49%
+    grid-column-gap: $space-16
+    margin-top: $space-16
+    ul.resultListStep
+      padding: 0 $space-24
+      li
+        margin-bottom: $space-8
+        &:last-of-type
+          margin-bottom: 0
+        span
+          display: inline-block
+          font-size: 13px
+          color: $gray-979797
+          margin-right: $space-4
+
+.relateBrandShopItem
+  margin-top: $space-16
+  &:last-of-type
+    margin-left: 0
+  .logoBrandShop
+    width: 32px
+    height: 32px
+    border-radius: $radius-8
+    overflow: hidden
+    margin-left: $space-8
+  span
+    font-size: $fontSize-12
+    color: $gray-979797
+    span
+      color: $gray-2f2f2f
+      margin-right: 2px
+  //section2
+.relateSearchItem
+  display: flex
+  align-items: center
+  margin-bottom: $space-24
+  cursor: pointer
+  &:last-of-type
+    margin-bottom: 0
+  i
+    color: $gray-5e5e5e
+    margin-left: $space-8
+
+ul.mostRelateSearch
+  li
+    margin-bottom: $space-8
+    color: $blue-168fdf
+    font-size: $fontSize-12
+    &:last-of-type
+      margin-bottom: 0
+

@@ -1,0 +1,73 @@
+@import "../../../../../Resources/css/base"
+.leftMainSlider
+  background: $colorWhite
+  padding: $space-24
+  border-radius: $radius-16
+  height: 583px
+  position: relative
+  display: flex
+  align-items: center
+  flex-direction: column
+  img
+    margin: auto
+  .text
+    display: flex
+    flex-direction: column
+    margin: auto
+    h1
+      font-size: $fontSize-24
+      font-weight: $fontWeight-700
+      margin-bottom: $space-16
+      text-align: center
+      span
+        color: $red-ed303d
+    p
+      font-size: $fontSize-14
+      max-width: 95%
+      color: $gray-2f2f2f
+      line-height: $space-24
+  .btns
+    display: flex
+    align-items: center
+    flex-direction: column
+    width: 100%
+    padding-left: $space-8
+    .btn
+      font-size: $fontSize-16
+      max-width: 90%
+      width: 256px
+      color: $colorBlack
+      border: 1px solid
+      margin-bottom: $space-16
+      border-radius: $radius-16
+      display: flex
+      padding: $space-16 0
+      justify-content: center
+      font-weight: bold
+
++breakpoint(mobileTablet)
+  .leftMainSlider
+    flex-direction: row
+    border-radius: 0
+    flex-wrap: wrap
+    padding: $space-16 0
+    height: auto
+    img
+      width: 50%
+      margin: 0 -10% 0 10%
+    .text
+      width: 50%
+      padding-left: $space-8
+      margin: 0
+      h1
+        font-size: $fontSize-16
+    .btns
+      flex-direction: row-reverse
+      justify-content: space-around
+      margin-top: $space-16
+      align-items: center
+      .btn
+        width: 120px
+        padding: $space-8 0
+        font-size: $fontSize-14
+        margin-bottom: 0

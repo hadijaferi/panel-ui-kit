@@ -1,0 +1,60 @@
+@import "./src/Resources/css/base"
+
+.user
+  display: flex
+  justify-content: flex-start
+  align-items: center
+  text-align: right
+  height: 88px
+  width: 100%
+  border-bottom: 1px solid $gray-e6e6e6
+  transition: background-color 0.1s ease-in
+  padding: 0 $space-32
+  position: relative
+  direction: rtl !important
+  cursor: pointer
+
+  &:hover
+    background-color: $gray-f9f9f9
+
+
+  &__details
+    margin-right: $space-8
+    overflow: hidden
+    white-space: nowrap
+    text-overflow: ellipsis
+    width: 100%
+
+    &_name
+      display: flex
+      align-self: center
+      font-weight: 500
+
+    &_unreadCount
+      background-color: $red-ed303d
+      width: 20px
+      height: 20px
+      border-radius: 50%
+      flex-shrink: 0
+      margin-right: $space-8
+      display: flex
+      justify-content: center
+      align-items: center
+      color: white
+
+    &_lastMessageTime
+      top: $space-16
+      left: $space-16
+      font-size: $fontSize-12
+      font-weight: 400
+      color: $gray-979797
+      margin-right: auto
+    &_lastMessage
+      margin-top: $space-8
+
+.active
+  cursor: auto
+  background-color: $gray-f9f9f9
+
+.miniThumbImage
+  border-radius: 4px

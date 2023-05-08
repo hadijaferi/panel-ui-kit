@@ -1,0 +1,69 @@
+@import "../../../../Resources/css/base"
+
+.head
+  width: 100%
+  background-color: $colorWhite
+  border-radius: $radius-16
+  min-height: 100px
+  display: flex
+  flex-wrap: wrap
+  justify-content: space-between
+  align-items: center
+  padding: 0 $space-24
+  .right
+    display: flex
+    ul
+      display: flex
+    .counter
+      li
+        font-weight: $fontWeight-500
+        font-size: $fontSize-16
+        + li
+          padding-right: 32px
+          margin-right: 32px
+          border-right: 1px solid $gray-cbcbcb
+    .time
+      li
+        display: flex
+        flex-wrap: wrap
+        + li
+          padding-right: 16px
+          margin-right: 16px
+          border-right: 1px solid $gray-cbcbcb
+  .left
+    display: flex
+    ul
+      display: flex
+      li
+        display: flex
+        flex-wrap: wrap
+        align-items: center
+        + li
+          padding-right: 32px
+          margin-right: 32px
+          border-right: 1px solid $gray-cbcbcb
+
+.mapContainer
+  height: 350px
+.content
+  padding: $space-32 $space-24
+  background-color: white
+  flex-grow: 1
+  width: 50%
+  border-radius: $radius-16
+  position: relative
+  ul
+    li
+      display: flex
+      flex-wrap: wrap
+    ul
+      li
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        + li
+          border-top: 1px solid $gray-e6e6e6
+          padding-top: $space-4
+          margin-top: $space-4
+  + div
+    margin-right: $space-16

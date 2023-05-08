@@ -1,0 +1,100 @@
+@import "../../../../../Resources/css/base"
+
+.mieterBox
+  height: 100%
+  text-align: center
+  border: solid 1px $gray-f2f2f2
+  border-radius: $radius-16
+  padding: 16px
+  max-width: 300px
+  margin-right: auto
+  .infoCounter
+    display: flex
+    justify-content: space-between
+    margin-bottom: $space-24
+    li
+      border-left: solid 1px $gray-e6e6e6
+      width: 100%
+      &:last-child
+        border-left: none
+  .addToCart
+    .icon
+      margin-left: $space-8
+      position: relative
+      font-size: 26px
+      &:before
+        content: '+'
+        position: absolute
+        right: 4px
+        top: -10px
+        width: 11px
+        height: 11px
+        border-radius: 10px
+        color: $red-ed303d
+        background: $colorWhite
+        font-size: 12px
+        font-weight: bold
+        opacity: 0
+        transition: all 0.1s ease-in-out
+    &:hover
+      .icon
+        &:before
+          opacity: 1
+          top: 0
+  .quantity
+    height: 32px
+    display: flex
+    overflow: hidden
+    .icon
+      cursor: pointer
+      width: 32px
+      padding-top: 6px
+      font-size: $fontSize-12
+      color: $gray-cbcbcb
+      border: solid 1px $gray-cbcbcb
+      transition: all 0.1s ease-in-out
+      &.active
+        color: $red-ed303d
+        border-color: $red-ed303d
+      &:hover
+        background: $red-ed303d
+        color: $colorWhite
+      &.disable
+        pointer-events: none
+      &:first-child
+        border-radius: 0 8px 8px 0
+      &:last-child
+        border-radius: 8px 0 0 8px
+    input
+      width: 50px
+      font-size: $fontSize-16
+      font-weight: $fontWeight-700
+      padding: 0 !important
+      border: none
+      border-top: solid 1px $gray-cbcbcb
+      border-bottom: solid 1px $gray-cbcbcb
+
+.weekParent
+  margin-bottom: $space-16
+  background: $colorWhite
+  margin-top: $space-16
+  padding: $space-16 0
+
+
+  .weekItem
+    border: solid 1px $gray-cbcbcb
+    padding: 6px $space-8
+    border-radius: $radius-8
+    margin-left: $space-8
+    transition: all 0.2s ease-in-out
+    box-shadow: 0 0 0 8px rgba($blue-18a0ff , 0)
+    cursor: pointer
+    &.active
+      border-color: $blue-18a0ff
+      box-shadow: 0 0 0 2px rgba($blue-18a0ff , 0.15)
+      color: $blue-18a0ff
+    &.disable
+      pointer-events: none
+      opacity: 0.5
+.activeDayName
+  color: $blue-18a0ff

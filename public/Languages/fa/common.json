@@ -1,0 +1,7 @@
+{
+  "http": {
+    "failedRequestTitle": "خطا",
+    "successRequestTitle": "موفق",
+    "failedRequest": "خطا در انجام عملیات"
+  }
+}

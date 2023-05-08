@@ -1,0 +1,27 @@
+@import "../../../../../Resources/css/base"
+.navbar
+  display: flex
+  justify-content: space-between
+  align-items: baseline
+  padding: 38px 23px 14px 16px
+  :global(i)
+    color: var(--floor-list-color)
+  > div:nth-child(1)
+    flex-grow: 1
+    span
+      font-weight: 500
+      font-size: 18px
+      line-height: 28px
+      color: var(--floor-list-color)
+  .themeButton
+    background-color: var(--floor-list-color)
+    @extend %themeButton
+    .ThemeIcon
+      color: var(--body-background)
+      padding: 7px
+
+%themeButton
+  border-radius: 8px
+  display: flex
+  justify-content: center
+  align-items: center

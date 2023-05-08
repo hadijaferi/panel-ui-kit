@@ -1,0 +1,25 @@
+@import "../../../../../../Resources/css/base"
+
+.galleryItem
+  width: 100%
+  height: 392px
+  cursor: pointer
+  overflow: hidden
+  transition: $transitionBaseFaster
+  display: grid
+  place-items: center
+  border-radius: $space-16
+  &:before
+    content: ""
+    display: block
+    padding-bottom: 100%
+    grid-area: 1 / 1 / 2 / 2
+
+  img
+    width: 100%
+    height: 100%
+    object-fit: contain
+    grid-area: 1 / 1 / 2 / 2
+  &:hover
+    opacity: 0.8
+

@@ -1,0 +1,74 @@
+@import "../../../../../../../Resources/css/base"
+.mieterBox
+  text-align: center
+  max-width: 256px
+  margin-right: auto
+  .infoCounter
+    display: flex
+    justify-content: center
+    margin-bottom: $space-24
+    li
+      border-left: solid 1px $gray-e6e6e6
+      text-align: center
+      padding: 0 $space-8
+      width: 100%
+      &:last-child
+        border-left: none
+  .addToCart
+    .icon
+      margin-left: $space-8
+      position: relative
+      font-size: 26px
+      &:before
+        content: '+'
+        position: absolute
+        right: 4px
+        top: -10px
+        width: 11px
+        height: 11px
+        border-radius: 10px
+        color: $red-ed303d
+        background: $colorWhite
+        font-size: 12px
+        font-weight: bold
+        opacity: 0
+        transition: all 0.1s ease-in-out
+    &:hover
+      .icon
+        &:before
+          opacity: 1
+          top: 0
+  .quantity
+    height: 32px
+    display: flex
+    overflow: hidden
+    .icon
+      cursor: pointer
+      width: 32px
+      padding-top: 6px
+      font-size: $fontSize-12
+      color: $gray-cbcbcb
+      border: solid 1px $gray-cbcbcb
+      transition: all 0.1s ease-in-out
+      &.active
+        color: $red-ed303d
+        border-color: $red-ed303d
+      &:hover
+        background: $red-ed303d
+        color: $colorWhite
+      &.disable
+        pointer-events: none
+      &:first-child
+        border-radius: 0 8px 8px 0
+      &:last-child
+        border-radius: 8px 0 0 8px
+    input
+      width: 50px
+      font-size: $fontSize-16
+      font-weight: $fontWeight-700
+      padding: 0 !important
+      border: none
+      border-top: solid 1px $gray-cbcbcb
+      border-bottom: solid 1px $gray-cbcbcb
+
+

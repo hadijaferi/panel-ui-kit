@@ -1,0 +1,103 @@
+@import "../../../../../Resources/css/base"
+
+.parent
+  margin-top: $space-32
+  background-color: #F9F9F9
+
+.root
+  display: grid
+  grid-template-columns: 49.5% 49.5%
+  grid-gap: $space-16
+  height: 608px
+  width: 100%
+  max-width: 1676px
+  margin-right: auto
+  margin-left: auto
+  padding: $space-32 $space-16
+
+  .boxesWrapper
+    display: grid
+    grid-template: repeat(2 ,1fr) / repeat(3 ,1fr)
+    grid-gap: $space-16
+
+
+    .acBox
+      display: flex
+      flex-direction: column
+      border-radius: $space-16
+      overflow: hidden
+
+      &:nth-child(3)
+        grid-column: span 1
+        grid-row: span 2
+      &:nth-child(5)
+        grid-column: span 1
+        grid-row: span 2
+
+      &:nth-child(4)
+        grid-column: span 2
+        grid-row: span 1
+      &:nth-child(6)
+        grid-column: span 2
+        grid-row: span 1
+
+      .content
+
+        width: 100%
+        height: 72px
+        background-color: rgba(0,0,0,0.3)
+        backdrop-filter: blur(4px)
+        -webkit-backdrop-filter: blur(4px)
+        padding: $space-8
+        border-radius: 0 0 $space-16 $space-16
+
+        display: flex
+        flex-direction: column
+
+        & > span
+          color: white
+          &:first-child
+            font-size: 20px
+            font-weight: bold
+
+
++breakpoint(bigDesktop)
+  .root
+    height: 478px
+    .boxesWrapper
+      .acBox
+        .content
+          height: 62px
+          & > span
+            &:first-child
+              font-size: 16px
+
++breakpoint(desktop)
+  .root
+    height: 422px
+    .boxesWrapper
+      .acBox
+        .content
+          height: 57px
+          font-size: 12px
+          & > span
+            &:first-child
+              font-size: 14px
+
++breakpoint(mobileTablet)
+  .root
+    max-width: 1140px
+    height: 422px
+    .boxesWrapper
+      .acBox
+        .content
+          height: 56px
+          font-size: 12px
+          & > span
+            &:first-child
+              font-size: 14px
+
+%shareFlex
+  display: flex
+  align-items: center
+  justify-content: center

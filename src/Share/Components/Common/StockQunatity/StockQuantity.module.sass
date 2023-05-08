@@ -1,0 +1,38 @@
+@import "../../../../Resources/css/base"
+
+.quantity
+  height: 32px
+  display: flex
+  overflow: hidden
+
+  .loading
+    width: 50px
+
+  .icon
+    cursor: pointer
+    width: 32px
+    padding-top: 6px
+    font-size: $fontSize-12
+    color: $gray-cbcbcb
+    border: solid 1px $gray-cbcbcb
+    transition: all 0.1s ease-in-out
+    &.active
+      color: $red-ed303d
+      border-color: $red-ed303d
+    &:hover
+      background: $red-ed303d
+      color: $colorWhite
+    &.disable
+      pointer-events: none
+    &:first-child
+      border-radius: 0 8px 8px 0
+    &:last-child
+      border-radius: 8px 0 0 8px
+  input
+    width: 50px
+    font-size: $fontSize-16
+    font-weight: $fontWeight-700
+    padding: 0 !important
+    border: none
+    border-top: solid 1px $gray-cbcbcb
+    border-bottom: solid 1px $gray-cbcbcb

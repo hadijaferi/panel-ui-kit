@@ -1,0 +1,33 @@
+@import "./src/Resources/css/base"
+
+.chatBoxHeader
+  width: 100%
+  background-color: white
+  border-bottom: 1px solid $gray-e6e6e6
+  display: flex
+  justify-content: space-between
+  align-items: center
+  padding: 12px $space-16
+  flex-shrink: 0
+  z-index: 3
+
+.avatar
+  min-width: auto
+  width: 48px !important
+  height: 48px !important
+
+.details
+  color: $gray-979797
+  margin-left: auto
+  margin-right: $space-8
+  & p
+    color: $gray-2f2f2f
+    font-weight: 500
+  & span
+    display: flex
+    align-items: center
+
+.toVitrinButton
+  padding: $space-8 $space-16 !important
+  & i
+    margin-right: $space-8

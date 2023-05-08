@@ -1,0 +1,28 @@
+@import "../../../../Resources/css/base"
+
+.page
+  height: 100vh
+  max-height: 100%
+  background: $gray-f2f2f2
+  display: flex
+  flex-direction: column
+  flex-wrap: nowrap
+  position: relative
+
+  .appContainer
+    height: 100vh
+    max-height: 100%
+    overflow: hidden
+    display: flex
+    flex-direction: column
+
+    .pageContent
+      position: relative
+      height: 100%
+      overflow: hidden
+
+      .pageContainer
+        height: 100%
+        +scrollbars($gray-cbcbcb)
+        overflow-y: auto
+        overflow-x: hidden

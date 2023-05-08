@@ -1,0 +1,53 @@
+.inputWrapper
+  width: 100%
+  position: relative
+  display: inline-block
+
+
+  label
+    color: #5E5E5E
+    text-transform: uppercase
+    position: absolute
+    z-index: 2
+    right: 20px
+    margin-top: 2px
+    top: 50%
+    pointer-events: none
+    transition: all .1s ease-out
+    transform: translateY(-50%) translateX(0) scale(1.1)
+    &.focused
+      transform: translateY(-21px) translateX(5px) scale(0.9)
+      margin-top: -1px
+
+  input
+    width: 100%
+    display: block
+    height: 56px
+    color: #2f2f2f
+    font-size: 14px
+    outline: none
+    border: 1px solid #bbb
+    padding: 18px 16px 0
+    border-radius: 16px
+    position: relative
+    text-align: right
+
+
+    &::placeholder
+      opacity: 0
+      visibility: hidden
+
+
+    &:focus
+      border-color: #2b96f1
+      box-shadow: 0 0 0 3px rgba(24, 160, 255, 0.12)
+
+      &::placeholder
+        opacity: 1
+        visibility: visible
+
+
+      & + label
+        transform: translateY(-21px) translateX(5px) scale(0.9)
+        margin-top: -1px
+
