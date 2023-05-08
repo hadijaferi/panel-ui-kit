@@ -1,0 +1,61 @@
+@import "../../../../../Resources/css/base"
+
+.mainSlider
+  background: $colorWhite
+  padding: $space-24
+  border-radius: $radius-16
+  height: 583px
+  position: relative
+  .skeleton
+    height: 100%
+  .image
+    width: 100%
+    height: 100%
+    background: no-repeat center / cover
+    border-radius: $radius-16
+  :global(.swiper-container)
+    height: 100%
+    position: relative !important
+    border-radius: $radius-24
+  :global(.swiper-pagination)
+    bottom: $space-32
+  :global(.swiper-button-prev),:global(.swiper-button-next)
+    &::after
+      font-size: $fontSize-24 !important
+  :global(.swiper-button-prev)
+    right: $space-16 !important
+  :global(.swiper-button-next)
+    left: $space-16 !important
+  :global(.swiper-pagination-bullet)
+    width: 8px
+    height: 8px
+    background: #c4c4c4
+    border-radius: $radius-24
+    transition: $transitionBase
+    opacity: 1
+  :global(.swiper-pagination-bullet-active)
+    width: 24px
+    background: $red-ed303d
+
++breakpoint(mobileTablet)
+  .mainSlider
+    height: 250px
+    border-radius: 0
+    :global(.swiper-container)
+      padding-bottom: $space-24
+    :global(.swiper-pagination)
+      bottom: 0
+    :global(.swiper-pagination-bullet)
+      width: 4px
+      height: 4px
+    :global(.swiper-pagination-bullet-active)
+      width: 16px
+    :global(.swiper-button-prev),:global(.swiper-button-next)
+      width: 15px
+      height: 45px
+      &::after
+        font-size: $fontSize-10 !important
+    :global(.swiper-button-prev)
+      right: $space-4 !important
+    :global(.swiper-button-next)
+      left: $space-4 !important

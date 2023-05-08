@@ -1,0 +1,183 @@
+@import "../../../../../../Resources/css/base"
+
+.section
+  background-color: $colorWhite
+  width: 100%
+  margin-top: -3px
+
+  .layout
+    max-width: 1344px
+    width: 100%
+    margin: auto
+
+    .headBox
+      position: relative
+      height: 536px
+      border-radius: 0 0 $radius-16 $radius-16
+      overflow: hidden
+      img
+        object-fit: cover
+      .shopStateBox
+        position: absolute
+        width: 134px
+        min-height: 48px
+        padding: 12px 0
+        border-radius: $space-16 0 0 $space-16
+        background-color: rgba(47,47,47,0.35)
+        top: 64px
+        display: flex
+        justify-content: center
+        align-items: center
+        font-weight: $fontWeight-700
+        font-size: $fontSize-18
+        .dot
+          margin-left: $space-8
+          display: inline-block
+          border: 1px solid $colorWhite
+          +circle(16px, #3DCC99)
+
+      .connectStore
+        display: flex
+        z-index: 4
+        flex-direction: column
+        position: absolute
+        max-height: 470px
+        max-width: 256px
+        padding: $space-16
+        top: 0
+        bottom: 0
+        margin-top: 25px
+        left: $space-32
+        background-color: $colorWhite
+        border-radius: $radius-16
+
+        .map
+          margin-bottom: $space-24
+          width: 100%
+          height: 100%
+          max-height: 149px
+          border-radius: $radius-8
+          overflow: hidden
+        .contactContent
+          .infoShop
+            display: flex
+            margin-bottom: $space-8
+            &:last-of-type
+              margin-bottom: 0
+            span
+              &:nth-child(1)
+                min-width: 40px
+
+
+        .percentageBox
+          display: flex
+          justify-content: center
+          li
+            flex-grow: 1
+            + li
+              border-right: 1px solid #E6E6E6
+            span
+              color: $gray-4e4e4e
+              &:nth-child(1)
+                font-size: $fontSize-12
+                margin-bottom: $space-8
+
+    .content
+      width: 100%
+      margin: auto
+      text-align: center
+      max-width: 560px
+      .parentProfile
+        position: relative
+        width: 248px
+        height: 248px
+        margin: -200px auto 8px auto
+
+      .profileServiceShop
+        display: flex
+        align-items: center
+        justify-content: center
+        border: 10px solid $colorWhite
+        overflow: hidden
+        +circle(248px)
+        .tickImg
+          width: 40px
+          height: 40px
+          position: absolute
+          bottom: 30px
+          left: 0
+
+      .titleBox
+        display: flex
+        justify-content: center
+        margin-bottom: $space-8
+        position: relative
+        align-items: baseline
+        .followers
+          font-size: $fontSize-14
+          position: absolute
+          right: 69%
+          top: 30%
+          line-height: 22px
+      .description
+        font-size: $fontSize-14
+        line-height: 22px
+        margin-bottom: $space-16
+        display: -webkit-box
+        max-width: 550px
+        max-height: 46px
+        -webkit-line-clamp: 2
+        -webkit-box-orient: vertical
+        overflow: hidden
+        text-overflow: ellipsis
+        text-align: center
+
+      .followBtn
+        margin: $space-8 auto
+        padding: 13px 31px
+        color: #ed313e
+        font-weight: 500
+        font-size: $fontSize-14
+        line-height: 22px
+
+
+    .menuBox
+      border-top: 1px solid #E6E6E6
+      max-width: 1070px
+      width: 100%
+      margin: auto
+      display: flex
+      justify-content: space-between
+      align-items: center
+      .right
+        display: flex
+        align-items: flex-start
+        .category
+          font-weight: 500
+          color: #2F2F2F
+          padding: 16px 16px 20px 16px
+          display: flex
+          align-items: center
+          + ul
+            border-right: 1px solid #E6E6E6
+
+      .left
+        display: flex
+        align-items: center
+        .chatBtn
+          padding: $space-16
+          background-color: $gray-f2f2f2
+          display: flex
+          align-self: center
+          margin-left: $space-16
+          max-height: 48px
+          font-weight: $fontWeight-500
+
+        .shareBtn
+          display: flex
+          justify-content: center
+          align-items: center
+          min-height: 48px
+          min-width: 56px
+          background-color: #F2F2F2
+          color: #2F2F2F

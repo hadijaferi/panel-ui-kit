@@ -1,0 +1,80 @@
+@import "../../../../Resources/css/base"
+.acComment
+  background-color: white
+  height: auto
+  padding: $space-16
+
+  &__title
+    font-weight: 700
+    font-size: 14px
+    color: $gray-2f2f2f
+
+  &__paragraph
+    margin-top: $space-8 !important
+    color: $gray-4e4e4e
+    overflow: hidden
+    position: relative
+
+  &__userDetail
+    display: grid
+    grid-template-rows: 1fr 1fr
+    grid-template-columns: auto 32px
+    grid-template-areas: "name image" "detail image"
+    column-gap: $space-8
+    direction: ltr
+    text-align: right
+    min-height: 32px
+    font-size: 12px
+    margin-top: $space-16
+    &_image
+      display: flex
+      justify-content: center
+      align-items: center
+      grid-area: image
+    & p
+      direction: rtl
+      color: $gray-5e5e5e
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      grid-area: name
+    & span
+      direction: rtl
+      display: flex
+      justify-content: flex-start
+      align-items: center
+      color: $gray-979797
+      grid-area: detail
+  &__ratings
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    margin-top: $space-16
+    &_like
+      height: 32px
+      border-radius: $radius-8
+      border: 1px solid $red-ed303d
+      min-width: 72px
+      display: flex
+      justify-content: space-between
+      align-items: center
+      padding: $space-8
+
+  &_preview
+    max-height: 229px
+    border-radius: $radius-16
+    & .acComment__paragraph
+      height: 65px
+      max-height: 65px
+  &__reply
+    width: 100%
+    background-color: $gray-f2f2f2
+    padding: $space-16
+    border-radius: $radius-16
+    margin-top: $space-16
+    display: flex
+    flex-direction: column
+    & span
+      margin-bottom: $space-8
+      color: $red-ed303d

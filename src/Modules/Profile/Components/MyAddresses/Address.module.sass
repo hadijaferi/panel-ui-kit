@@ -1,0 +1,69 @@
+@import "../../../../Resources/css/base"
+
+.acAddress
+  height: 234px
+  display: flex
+  flex-direction: column
+  justify-content: space-between
+
+  padding: $space-16
+  background-color: white
+  border-radius: $space-16
+  color: $gray-979797
+
+  &__header
+    display: flex
+    justify-content: space-between
+    min-height: 32px
+
+    .right
+      display: flex
+      align-items: center
+
+      .name
+        color: $gray-2f2f2f
+        font-size: $fontSize-16
+        font-weight: $fontWeight-500
+
+    .left
+      color: white
+      padding: $space-4 $space-16
+      border-radius: $space-8
+      background-color: $cyan-41bfb9
+
+
+  &__body
+
+    .row
+      display: flex
+      flex-direction: row
+      align-items: center
+      margin-top: $space-8
+
+      &:first-of-type
+        margin-top: 0
+        align-items: normal
+
+      .text
+        font-weight: $fontWeight-500
+
+  &__footer
+    display: flex
+    flex-direction: row
+    justify-content: flex-end
+
+    li
+      font-size: $fontSize-12
+      border-left: solid 1px $gray-cbcbcb
+      text-align: center
+      padding-right: $space-16
+      padding-left: $space-16
+      &:last-child
+        border-left: none
+        padding-left: 0
+
+
+.icon
+  min-width: $space-32
+  margin-left: $space-8
+  text-align: center

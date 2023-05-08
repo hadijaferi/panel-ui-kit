@@ -1,0 +1,65 @@
+@import "../../../../Resources/css/base"
+
+.acStoreBox
+  max-width: 330px
+  padding: $space-16
+  text-align: center
+  transition: $transitionBaseFaster
+
+  &:hover
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.08)
+
+  .head
+    display: flex
+    flex-direction: column
+    align-items: center
+    margin-bottom: $space-16
+
+    .wrapperPicture
+      display: grid
+      grid-template-columns: 102px 102px
+      grid-template-rows: 102px
+      grid-column-gap: $space-24
+
+      .productPicture
+        border-radius: $radius-16
+        border: 1px solid $gray-e6e6e6
+        overflow: hidden
+
+
+    .profileShop
+      margin-top: -45px
+      z-index: 3
+
+  .body
+    padding-bottom: $space-16
+    margin-bottom: $space-16
+    border-bottom: 1px solid $gray-e6e6e6
+    .titleStore
+      display: block
+      min-height: 22px
+      font-weight: $fontWeight-700
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+
+  .infoStore
+    min-height: 22px
+    display: flex
+    justify-content: space-between
+    margin-bottom: $space-24
+    > span
+      white-space: nowrap
+      text-overflow: ellipsis
+      overflow: hidden
+
+  .button
+    display: block !important
+    padding: $space-8 0
+    font-weight: $fontWeight-700
+    font-size: $fontSize-16
+    transition: $transitionBaseFaster
+
+    &:hover
+      background: $blue-ebf7ff
+      border-radius: $radius-8

@@ -1,0 +1,24 @@
+@import "../../../Resources/css/base"
+
+.wrapper
+  grid-template-columns: 256px 1fr
+  @extend %shareWrap
+
+.categoryItemsWrap
+  grid-template-columns: repeat(5, 1fr)
+  @extend %shareWrap
+
+%shareWrap
+  display: grid
+  grid-gap: $space-16
+
++breakpoint(bigDesktop)
+  .categoryItemsWrap
+    grid-template-columns: repeat(4, 1fr)
+
++breakpoint(desktop)
+  .categoryItemsWrap
+    grid-template-columns: repeat(3, 1fr)
+
+
+

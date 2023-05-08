@@ -1,0 +1,32 @@
+@import "../../../../../Resources/css/base"
+
+.MieterInfoCounter
+  display: flex
+  justify-content: space-between
+  li
+    border-left: solid 1px $gray-e6e6e6
+    width: 100%
+    text-align: center
+    padding-right: $space-8
+    &:last-child
+      border-left: none
+
+ul.specificationListStep
+  li
+    padding-bottom: $space-8
+    &:last-of-type
+      padding-bottom: 0
+    span
+      &:nth-child(1)
+        position: relative
+        padding-right: $space-8
+        margin-left: $space-24
+        &:before
+          content: ""
+          position: absolute
+          top: 50%
+          right: 0
+          transform: translateY(-50%)
+          +circle(4px, $gray-cbcbcb)
+      &:nth-child(2)
+        font-weight: $fontWeight-700

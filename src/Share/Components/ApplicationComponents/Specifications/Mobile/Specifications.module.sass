@@ -1,0 +1,46 @@
+@import "../../../../../Resources/css/base"
+
+ul.specificationListStep
+  li
+    display: flex
+    padding-bottom: $space-8
+    &:last-of-type
+      padding-bottom: 0
+    span
+      &:nth-child(1)
+        position: relative
+        padding-right: $space-8
+        margin-left: $space-8
+        min-width: 80px
+        display: inline-block
+        &:before
+          content: ""
+          position: absolute
+          top: 50%
+          right: 0
+          transform: translateY(-50%)
+          +circle(4px, $gray-cbcbcb)
+      &:nth-child(2)
+        font-weight: $fontWeight-700
+
+.fixedBg
+  height: 100%
+  background: $colorWhite
+.scroll
+  height: calc(100vh - 57px)
+  +scrollbars(red)
+ul.specificationListStepMobile
+  li
+    display: flex
+    padding-bottom: $space-8
+    &:last-of-type
+      padding-bottom: 0
+    span
+      &:nth-child(1)
+        min-width: 80px
+        display: inline-block
+        padding-top: 2px
+      &:nth-child(2)
+        color: $gray-4e4e4e
+        font-size: $fontSize-16
+        font-weight: $fontWeight-700

@@ -1,0 +1,71 @@
+@import "../../../../../../Resources/css/base"
+
+
+.acCartList
+  min-width: 274px
+  max-width: 330px
+  display: flex
+  flex-direction: column
+  padding: $space-16 0
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08)
+  position: absolute
+  top: 24px
+  left: 0
+  visibility: hidden
+  opacity: 0
+  transition: all .2s ease-in-out
+
+  &:hover
+    visibility: visible
+    opacity: 1
+
+  .head
+    display: flex
+    justify-content: space-between
+    border-bottom: 1px solid $gray-e6e6e6
+    padding: 0 $space-16 $space-8
+
+  .itemWrap
+    max-height: 260px
+    padding-left: 8px
+    margin-left: -8px
+    +scrollbars($gray-e6e6e6, 6px, 8px)
+
+    .item
+      display: grid
+      grid-template-columns: 83px 1fr
+      grid-gap: $space-4
+      margin-bottom: $space-16
+      padding-bottom: $space-8
+      border-bottom: 1px solid $gray-e6e6e6
+
+      &:last-of-type
+        margin-bottom: 0
+
+      .productPhoto
+        max-width: 83px
+        height: 83px
+        position: relative
+
+      .content
+        display: flex
+        flex-direction: column
+
+        .titleParent
+          max-width: 174px
+          display: -webkit-box
+          -webkit-line-clamp: 2
+          -webkit-box-orient: vertical
+          overflow: hidden
+          text-overflow: ellipsis
+          text-align: right
+          font-size: $fontSize-12
+          font-weight: $fontWeight-500
+          margin-bottom: $space-4
+
+.cartBtn
+  &:hover
+    + .acCartList
+      top: 24px
+      visibility: visible
+      opacity: 1

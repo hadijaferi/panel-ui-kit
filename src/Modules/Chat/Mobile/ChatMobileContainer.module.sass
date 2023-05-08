@@ -1,0 +1,24 @@
+@import "./src/Resources/css/base"
+
+.bottomNavigation
+  position: relative
+
+  .chatBoxInput
+    transition: $transitionBase
+
+  .chatBoxInputHide
+    transform: translateY(100%)
+
+  .bottomNavigationItem
+    transition: $transitionBase
+    position: absolute
+    left: 0
+    bottom: 0
+    padding-bottom: 2px
+    transform: translateY(120%)
+    width: 100%
+    background: $colorWhite
+    z-index: 10
+
+    &.show
+      transform: translateY(0)

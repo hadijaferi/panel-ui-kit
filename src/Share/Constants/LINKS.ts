@@ -1,0 +1,28 @@
+export const LINKS = {
+  NOT_FOUND: "/404",
+  PRODUCT: "/product/acp-[id]/[name]",
+  SERVICE: "/service/acs-[id]/[name]",
+  MAIN: "/",
+  VITRIN: "/shop/[username]",
+  AUTH: {
+    SET_PASSWORD: "/auth/set-password",
+    LOGIN: "/auth/login",
+    LOGIN_WITH_QUERY: "/auth/login?mobile=mobileValue",
+    LOGOUT: "/auth/logout",
+    REGISTER: "/auth/register",
+    OTP_VALIDATION: "/auth/otp-validation",
+    ENTER_PASSWORD: "/auth/enter-password",
+  },
+  PROFILE: {
+    DASHBOARD: "/profile/dashboard",
+    CHAT: "/profile/chat",
+    NOTIFICATION: "/profile/notification",
+    ORDERS: "/profile/myorders",
+  },
+  ADD_COMMENT: "/comment/[id]",
+  SEARCH: "/search/[id]",
+  CART: "/cart",
+  SHIPPING: "/shipping",
+  PAYMENT: "/payment",
+  HOME: "/",
+};

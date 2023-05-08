@@ -1,0 +1,78 @@
+@import "../../../../../../../Resources/css/base"
+.backdrop
+  position: absolute
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background-color: rgba(#000, 0.6)
+  z-index: 10
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-direction: column
+
+
+
+  &__previewContainer
+    width: 40vmin
+    height: 40vmin
+    max-width: 362px
+    max-height: 362px
+    border: 2px solid white
+    border-radius: $radius-16
+
+    +breakpoint(mobileTablet)
+      width: 80%
+      height: auto
+      max-width: unset
+      max-height: unset
+
+  &__controlButtons
+    margin-top: $space-16
+    width: 40vmin
+    max-width: 362px
+    display: flex
+    align-items: center
+    justify-content: flex-end
+
+    +breakpoint(mobileTablet)
+      width: 80%
+
+    & button
+      height: 6vmin
+      border-radius: $radius-16
+      flex-shrink: 0
+      cursor: pointer
+      transition: background-color 0.3s ease
+
+
+    & button:first-child
+      background-color: white
+      height: 6vmin
+      width: 6vmin
+      max-width: 48px
+      max-height: 48px
+      color: $gray-979797
+
+
+      +breakpoint(mobileTablet)
+        height: 11vmin
+        width: 11vmin
+
+      &:hover
+        background-color: rgba(white, 0.8)
+
+    & button:last-child
+      background-color: $cyan-41bfb9
+      width: 12vmin
+      max-width: 96px
+      max-height: 48px
+      margin-right: $space-8
+      color: white
+
+      +breakpoint(mobileTablet)
+        height: 11vmin
+
+      &:hover
+        background-color: rgba($cyan-41bfb9, 0.8)

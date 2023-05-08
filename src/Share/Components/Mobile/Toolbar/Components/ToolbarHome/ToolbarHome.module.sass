@@ -1,0 +1,62 @@
+@import "../../../../../../Resources/css/base"
+
+.toolbarHome
+  background: $gray-f2f2f2
+  color: $gray-5e5e5e
+  margin: $space-8 0
+  padding: 0 $space-8
+  border-radius: $radius-16
+  width: 100%
+  display: flex
+  flex-wrap: nowrap
+  align-items: center
+  flex-direction: row
+  justify-content: space-between
+
+  .toolbarHomeBtn
+    min-width: 32px
+
+  .search
+    position: relative
+    width: 100%
+    margin: 0 $space-8
+
+    input
+      position: relative
+      z-index: 2
+      display: block
+      line-height: 48px
+      width: 100%
+      background: transparent
+      opacity: 0
+      transition: $transitionBase
+
+
+    .placeHolder
+      z-index: 1
+      width: 100%
+      position: absolute
+      left: 0
+      top: 50%
+      transform: translateY(-50%)
+      transition: $transitionBase
+      color: $gray-979797
+      font-weight: $fontWeight-400
+      font-size: $fontSize-14
+
+      span
+        color: $red-ed303d
+        font-weight: bold
+        margin-right: $space-4
+        font-size: $fontSize-16
+
+  &.isSearchOpen
+    input
+      opacity: 1
+
+    .search
+      .placeHolder
+        opacity: 0
+
+
+

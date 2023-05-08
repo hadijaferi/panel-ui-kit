@@ -1,0 +1,41 @@
+@import "../../../../../../Resources/css/base"
+
+.userInfo
+  min-width: 216px
+  max-width: 330px
+  display: flex
+  flex-direction: column
+  width: 100%
+  padding: $space-24 0 0
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08)
+  visibility: hidden
+  opacity: 0
+  position: absolute
+  top: calc(100% + 4px)
+  left: 0
+  transition: all 0.2s ease-in-out
+  &.active
+    visibility: visible
+    opacity: 1
+  ul.infoListStep
+    margin-bottom: $space-24
+    li
+      display: flex
+      align-items: center
+      margin-bottom: $space-16
+      &:last-of-type
+        margin-bottom: 0
+      span
+        font-size: $fontSize-12
+        font-weight: $fontWeight-500
+        color: $gray-5e5e5e
+      i
+        color: $gray-5e5e5e
+        font-size: $fontSize-16
+        margin-left: $space-4
+  .downLogOut
+    display: flex
+    align-items: center
+    padding: $space-8 $space-16
+    background: $gray-f2f2f2
+    color: $gray-5e5e5e

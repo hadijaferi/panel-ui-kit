@@ -1,0 +1,58 @@
+@import "../../../../Resources/css/base"
+.acTab
+  .acHead
+    border-radius: $radius-16
+    background: $colorWhite
+    padding: 0 $space-24
+    display: flex
+    margin-bottom: $space-32
+    &.border
+      background: transparent
+      position: relative
+      &::after
+        width: 100%
+        height: 4px
+        background: $gray-e6e6e6
+        content: ""
+        position: absolute
+        right: 0
+        bottom: 0
+
+    .acItem
+      color: $gray-2f2f2f
+      position: relative
+      margin-left: $space-32
+      padding: $space-16 $space-4 20px
+      transition: $transitionBase
+      border-radius: 0
+      z-index: 1
+
+      &::before
+        width: 100%
+        height: 4px
+        content: ''
+        background: $colorWhite
+        position: absolute
+        bottom: 0
+        right: 0
+        transition: $transitionBase
+
+      &:hover
+        color: $red-f1606a
+
+      &.acActive
+        &::before
+          background: $red-f1606a
+    .acActive
+      color: $red-f1606a !important
+
+
+@media only screen and (max-width: $sm)
+  .acTab
+    .acHead
+      &.border
+        &::after
+          background: $gray-5e5e5e
+      .acItem
+        &::before
+          background: $gray-5e5e5e

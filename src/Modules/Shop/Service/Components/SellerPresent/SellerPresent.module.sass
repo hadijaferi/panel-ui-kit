@@ -1,0 +1,33 @@
+@import "../../../../../Resources/css/base"
+.parent
+  display: grid
+  overflow: hidden
+
+  &.rtl
+    grid-template-columns: 1fr 772px
+    grid-template-areas: "content photo"
+
+  &.ltr
+    grid-template-columns: 772px 1fr
+    grid-template-areas: "photo content"
+
+  .pTag
+    display: block
+    line-height: 2
+
+  .content
+    grid-area: content
+
+  .presentPhoto
+    grid-area: photo
+    height: 100%
+
+.skeleton_img
+  height: 100%
+  border-radius: $radius-16
+  border: 1px solid rgba(0, 0, 0, 0.08)
+  overflow: hidden
+
+  img
+    object-fit: cover
+

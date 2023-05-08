@@ -1,0 +1,32 @@
+@import "./src/Resources/css/base"
+.chatListWrapper
+  background-color: white
+  border-left: 1px solid $gray-e6e6e6
+  flex-shrink: 0
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  overflow: auto
+  height: 730px
+
+  +breakpoint(mobileTablet)
+    height: auto
+    min-height: 100%
+
+  & .chatListSearch
+    width: 100%
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: $space-24 $space-32
+    flex-shrink: 0
+
+.chatListContacts
+  overflow-y: scroll
+  list-style: none
+  width: 100%
+  direction: ltr
+  +scrollbars($gray-cbcbcb)
+
+

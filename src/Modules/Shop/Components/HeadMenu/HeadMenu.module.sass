@@ -1,0 +1,28 @@
+@import "../../../../Resources/css/base"
+
+.menu
+  ul
+    display: flex
+    align-items: center
+    li
+      position: relative
+      margin-left: $space-8
+      color: #979797
+      font-weight: 500
+      font-size: $fontSize-14
+      cursor: pointer
+      text-align: center
+      padding: $space-16
+      +breakpoint(mobile)
+        padding: 10px $space-8
+        color: $gray-2f2f2f
+
+    .active
+      color: $red-ed303d
+      border-bottom: 2px solid $red-ed303d
+      +breakpoint(mobile)
+        border-bottom: 4px solid $red-ed303d
+        border-radius: 2px
+
+
+

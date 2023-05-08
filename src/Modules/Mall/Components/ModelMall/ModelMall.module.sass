@@ -1,0 +1,249 @@
+@import "../../../../Resources/css/base"
+
+.mallContainer
+  width: 100%
+  max-width: 650px
+  height: 650px
+  position: relative
+  perspective: 500px
+  perspective-origin: 50% center
+  display: flex
+  align-items: center
+  justify-content: center
+  overflow: hidden
+  transition: all 1s ease-in-out
+
+  &:hover
+    perspective-origin: 42% center
+  .iconButton
+    width: 40px
+    height: 40px
+    position: absolute
+    left: 0
+    bottom: 0
+    text-align: center
+    font-size: $fontSize-18
+    padding-top: 6px
+    border-radius: $radius-8
+    color: var(--change-theme-button-color)
+    background: var(--change-theme-button)
+    overflow: hidden
+    cursor: pointer
+    transition: all 0.2s ease-in-out
+    + .iconButton
+      margin-right: 16px
+
+  .leftWall
+    width: 650px
+    height: 270px
+    position: absolute
+    left: -100px
+    top: 0
+    bottom: 0
+    margin: auto
+    border-right: solid 50px var(--mall-border)
+    border-top: solid 10px var(--mall-border)
+    border-left: solid 40px var(--mall-border)
+    transform: rotateY(-55deg)
+    padding-left: 70px
+    padding-bottom: 20px
+    display: flex
+    flex-direction: column-reverse
+    transition: all 0.1s ease-in-out
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      background: var(--mall-border-space)
+      height: 30px
+
+    &:before
+      content: ''
+      width: 70px
+      left: 0
+      top: 15px
+      bottom: -15px
+      position: absolute
+      transform: skewY(22deg)
+      z-index: 2
+      background: var(--body-background)
+      border-left: solid 15px rgba(0, 0, 0, 0.1)
+
+    .column
+      position: absolute
+      top: 0
+      bottom: 0
+      right: 25%
+      width: 40px
+      background: var(--mall-border)
+      z-index: 2
+      pointer-events: none
+
+      &:after,
+      &:before
+        content: ''
+        position: absolute
+        left: 100%
+        top: 40%
+        bottom: 0
+        width: 20px
+        background: var(--mall-border-column)
+        transform-origin: left center
+        transform: skewY(-20deg)
+
+      &:after
+        transform: skewY(25deg)
+        bottom: 50%
+        top: 0
+
+      + .column
+        right: 60%
+
+      &.elevator
+        background: var(--mall-border-elevator)
+        right: 7%
+        top: 20px
+        bottom: 10px
+        width: 25px
+        backdrop-filter: blur(10px)
+        z-index: 2
+        opacity: 0.2
+
+        &:after,
+        &:before
+          background: var(--mall-border-elevator-selector)
+          width: 10px
+          border-left: solid 2px #363636
+
+    .logo
+      position: absolute
+      left: calc(100% + 5px)
+      width: 40px
+      height: 50px
+      top: 0
+      background: url("../../../../Resources/image/authLogo.svg") no-repeat center / 100% auto
+      filter: brightness(var(--mall-logo-brightness))
+      opacity: 0.8
+
+
+  .rightWall
+    width: 650px
+    height: 270px
+    position: absolute
+    right: -273px
+    top: 0
+    bottom: 0
+    margin: auto
+    border-right: solid 50px var(--mall-border-right)
+    border-top: solid 10px var(--mall-border-right)
+    border-left: solid 40px var(--mall-border-right)
+    transform: rotateY(55deg)
+    padding-bottom: 20px
+    padding-right: 100px
+    overflow: hidden
+    display: flex
+    flex-direction: column-reverse
+    transition: all 0.1s ease-in-out
+    &:after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      background: var(--mall-border-space)
+      height: 30px
+
+    .floor
+      pointer-events: none
+
+
+  .floor
+    height: 7px
+    width: 100%
+    background: var(--mall-floor)
+    transition: all 0.2s ease-in-out
+    position: relative
+    overflow: hidden
+
+    &:nth-child(2n)
+      background: var(--mall-floor-even)
+
+    &:global(.floor-hover-active),
+    &:hover
+      animation: floorFlash alternate infinite 1s
+      background: $red-ed303d !important
+      transition: all 0.05s ease-in-out
+      z-index: 1
+
+      &:before
+        right: 110%
+        transition: all 0.8s ease-in-out 0.2s
+
+    &:before
+      content: ''
+      position: absolute
+      right: -100px
+      top: 0
+      bottom: 0
+      width: 100px
+      opacity: 0.8
+      background: #FFF
+      transform: skewY(-30deg)
+      transition: all 0s ease-in-out
+
+  &.lighten
+    .leftWall
+      //border-right: solid 50px #FBFBFB
+      //border-top: solid 10px #FBFBFB
+      //border-left: solid 40px #FBFBFB
+      &:after
+        //background: #c1c1c1
+
+      &:before
+        //background: $gray-e6e6e6
+        border-left: solid 15px rgba(0, 0, 0, 0.03)
+
+      .column
+        //background: #FBFBFB
+
+        //&:after,
+        //&:before
+        //  background: #ECECEC
+        &.elevator
+          //background: #bbb
+
+          &:after,
+          &:before
+            //background: #777
+            //border-left: solid 2px #363636
+
+      .logo
+        //background: url("../../../../Resources/image/authLogo.svg") no-repeat center / 100% auto
+        //filter: brightness(10%)
+        //opacity: 0.3
+    .rightWall
+      //border-right: solid 50px #cacaca
+      //border-top: solid 10px #cacaca
+      //border-left: solid 40px #cacaca
+
+      &:after
+        //background: #a0a0a0
+    .floor
+      //background: #FFF
+
+      &:nth-child(2n)
+        //background: #EBEBEB
+
+      &:hover
+        //background: $red-ed303d
+        //box-shadow: 0 0 10px 3px rgba($red-ed303d, 0.4)
+
+@keyframes floorFlash
+  0%, 60%
+    filter: brightness(100%)
+    box-shadow: 0 0 2px 0 rgba($red-ed303d, 0.4)
+  100%
+    filter: brightness(130%)
+    box-shadow: 0 0 10px 2px rgba($red-ed303d, 0.4)

@@ -1,0 +1,44 @@
+@import "../../../../../Resources/css/base"
+
+.tumSlider
+  overflow: hidden
+  display: flex
+  :global(.swiper-container)
+    height: 550px
+    :global(.swiper-slide-active)
+      .item
+        border: 1px solid $red-ed303d
+        opacity: 1
+  .item
+    max-width: 80px
+    max-height: 80px
+    border: 1px solid rgba($red-ed303d,0)
+    padding: $space-16 $space-8
+    box-sizing: border-box
+    border-radius: $radius-8
+    display: flex
+    justify-content: center
+    align-items: center
+    opacity: 0.5
+    transition: $transitionBase
+
+
+.big
+  height: 556px
+  border-radius: $radius-16
+  border: 1px solid #e6e6e6
+  display: flex
+  align-items: center
+  justify-content: center
+  img
+    max-width: 90%
+    max-height: 90%
+    width: auto
+    height: auto
+
+.gallery
+  border-top: 1px solid $gray-e6e6e6
+  padding-top: $space-16
+  width: 100%
+  display: flex
+  margin-top: $space-16

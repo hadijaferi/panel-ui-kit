@@ -1,0 +1,21 @@
+@import "../../../../Resources/css/base"
+
+.shortView
+  position: sticky
+  top: 105px
+.selector
+  border: solid 1px $gray-e6e6e6
+  border-radius: $radius-16
+  width: 100%
+  display: flex
+  padding: $space-8 $space-16
+  cursor: pointer
+  align-items: center
+  img
+    width: 30px
+    margin-left: $space-16
+  &.active
+    border-color: $blue-18a0ff
+    box-shadow: 0 0 0 3px rgba($blue-18a0ff , 0.1)
+
+

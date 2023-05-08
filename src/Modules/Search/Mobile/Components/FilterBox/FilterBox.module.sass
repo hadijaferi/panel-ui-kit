@@ -1,0 +1,28 @@
+@import "../../../../../Resources/css/base"
+
+.filterItem
+  display: flex
+  justify-content: space-between
+  background: $colorWhite
+  padding: $space-16
+  margin-bottom: $space-4
+  &:last-of-type
+    margin-bottom: 0
+  .title
+    font-weight: $fontWeight-700
+.filterItemChild
+  background: $colorWhite
+  padding: $space-16
+  margin-bottom: $space-4
+  transform: translateX(-$space-8)
+  position: relative
+  .title
+    font-weight: $fontWeight-700
+  &:before
+    content: ""
+    position: absolute
+    top: 0
+    right: 0
+    width: 2px
+    height: 100%
+    background: $blue-168fdf

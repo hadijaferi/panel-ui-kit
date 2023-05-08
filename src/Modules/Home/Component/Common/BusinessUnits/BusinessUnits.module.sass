@@ -1,0 +1,78 @@
+@import "../../../../../Resources/css/base"
+.businessUnits
+  position: relative
+  margin-top: $space-32
+  display: flex
+  flex-wrap: wrap
+  :global(.swiper-container)
+    border-radius: $radius-24
+  .col
+    width: 50%
+  .image
+    position: absolute
+    top: 0
+    bottom: -31px
+    margin: auto
+  .haveOnlineShop
+    display: flex
+    .whiteSpace
+      background: $colorWhite
+      border-radius: 0 0 100px 0
+      width: 80%
+      height: 100%
+      margin-right: auto
+    .left
+      background: $colorWhite
+      display: flex
+      align-items: center
+      justify-content: space-between
+      border-radius: 16px 0 0 16px
+      .title
+        font-weight: $fontWeight-500
+        font-size: $fontSize-24
+        margin: $space-24 0 $space-8
+        span
+          color: $cyan-41bfb9
+      .btn
+        background: $cyan-41bfb9
+        color: #fff
+        width: $space-56
+        height: $space-56
+        border-radius: $radius-8
+        display: flex
+        align-items: center
+        justify-content: center
+        margin-left: $space-32
+        ::before
+          font-size: $fontSize-16
+
+      p
+        margin-bottom: $space-16
+
+
++breakpoint(mobileTablet)
+  .businessUnits
+    flex-direction: column
+    .col
+      width: 100%
+    .image
+      position: inherit
+    .haveOnlineShop
+      > div
+        display: none
+      .left
+        display: flex
+        flex-direction: column
+        width: 100%
+        border-radius: $radius-16
+        padding: $space-16
+        > div
+          width: 100%
+          .title
+            font-size: $fontSize-18
+        .btn
+          width: $space-32
+          height: $space-32
+          margin: 0 auto 0 0
+          ::before
+            font-size: $fontSize-12

@@ -1,0 +1,21 @@
+@import "../../../../Resources/css/base"
+.vitrinCoverMenu
+  background: $colorWhite
+  border-radius: $radius-16
+  padding: 0 $space-16
+  z-index: 5
+  ul
+    li
+      display: block
+      padding: $space-24
+      cursor: pointer
+      border-bottom: solid 2px transparent
+      transition: all 0.2s ease-in-out
+      font-weight: $fontSize-14
+      &.active
+        border-bottom-color: $red-ed303d
+        color: $red-ed303d
+  &.sticky
+    position: sticky
+    top: 105px
+    box-shadow: 0 4px 6px rgba(0,0,0,0.03)

@@ -1,0 +1,114 @@
+@import "../../../src/Resources/css/base"
+///////////////// stepper
+.cartUnit
+  background: $colorWhite
+  margin-bottom: $space-16
+  .cartUnitStepper
+    display: flex
+    li
+      width: 100%
+      border-bottom: solid 3px $gray-e6e6e6
+      position: relative
+      text-align: center
+      color: $gray-979797
+      padding-bottom: $space-16
+      &:before
+        content: ""
+        position: absolute
+        right: 0
+        left: 0
+        bottom: -10px
+        margin: auto
+        width: 16px
+        height: 16px
+        background: $gray-e6e6e6
+        border-radius: 10px
+      &.active
+        border-bottom-color: $red-ed303d
+        font-weight: $fontWeight-700
+        color: $gray-2f2f2f
+        &:before
+          background: $red-ed303d
+
+///////////////// cart step content
+.cartStep
+  .cartItem
+    display: grid
+    grid-template-columns: 200px 1fr
+    grid-gap: $space-16
+    padding-bottom: $space-24
+    .cartPic
+      img
+        width: 100%
+        max-width: 140px
+        margin: auto
+
+
+    + .cartItem
+      border-top: solid 1px $gray-f2f2f2
+      padding-top: $space-24
+
+    &:last-child
+      padding-bottom: 0
+
+///////////////// summary
+.shortView
+  position: sticky
+  top: 105px
+///////////////// post shipping selector
+.selector
+  border: solid 1px $gray-e6e6e6
+  border-radius: $radius-16
+  width: 100%
+  display: flex
+  padding: $space-8 $space-16
+  cursor: pointer
+  align-items: center
+  img
+    width: 30px
+    margin-left: $space-16
+  &.active
+    border-color: $blue-18a0ff
+    box-shadow: 0 0 0 3px rgba($blue-18a0ff , 0.1)
+///////////////// address shipping
+.sendingStep
+  > li
+    .sendingItemHeader
+      border-bottom: dashed 1px $gray-cbcbcb
+      padding-bottom: $space-16
+      margin-bottom: $space-16
+    .sendingItemProduct
+      margin-bottom: $space-24
+      li
+        box-shadow: 0 0 7px rgba(0,0,0,0)
+        padding-top: $space-8
+        padding-bottom: $space-8
+        border-radius: $radius-16
+        transition: all 0.2s ease-in-out
+        &:hover
+          box-shadow: 0 3px 7px rgba(0,0,0,0.07)
+    .sendingItemSelector
+      .tab
+        border-bottom: solid 2px $gray-e6e6e6
+        border-radius: 0
+        > div
+          position: relative
+          top: 2px
+        &Bottom
+          background: $gray-f2f2f2
+          border-radius: 0 0 $radius-16 $radius-16
+          padding: $space-24
+    + li
+      border-top: solid 2px $gray-e6e6e6
+      padding-top: $space-32
+      margin-top: $space-32
+      
+
+
+
+.summeryListItem
+  + .summeryListItem
+    border-top: solid 2px $gray-f2f2f2
+
+
+

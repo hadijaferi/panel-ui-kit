@@ -1,0 +1,28 @@
+@import "../../../../../src/Resources/css/base"
+
+ul.listPaginationStep
+  display: flex
+  text-align: center
+  align-items: center
+
+  li
+    color: $gray-5e5e5e
+    display: inline-block
+    padding: 0 $space-16
+
+    .item
+      width: 32px
+      height: 32px
+      margin-top: 2px
+
+
+      &.active
+        background: $red-ed303d
+        color: $colorWhite
+        &:hover
+          background: $red-ed303d !important
+
+      span
+        padding-top: 2px
+
+

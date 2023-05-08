@@ -1,7 +1,8 @@
-import React, {useEffect, useRef} from "react";
+import React, { Component } from "react";
 import style from "./Button.module.sass";
 import generateClassName from "../../../Helpers/Dom/generateClassName";
 import LoadingSpin from "../LoadingSpin/LoadingSpin";
+import { IBaseComponentProps } from "../../../../infrastructure/Models/IBaseComponent";
 
 type buttonType = "button" | "submit" | "reset";
 type buttonTheme = "default" | "bordered" | "text" | "iconic" | "forButtonLink";
@@ -9,7 +10,7 @@ type buttonColor = "red" | "green" | "blue" | "yellow" | "gray" | "lightGray";
 type buttonSize = "small" | "medium" | "large";
 type radiusSize = "radius8" | "radius16";
 
-export interface IButtonProps {
+export interface IButtonProps extends IBaseComponentProps {
   type?: buttonType;
   theme: buttonTheme;
   color?: buttonColor;
@@ -22,37 +23,86 @@ export interface IButtonProps {
   onClick?: () => void;
   rippleColor?: string | "transparent";
   refCallBack?: (ref: any | undefined) => void;
-  className?: string
-  children?: React.ReactElement
 }
-
 
 interface IButtonStates {
   rippleColor: string;
 }
 
-const  Button = (props:IButtonProps)=> {
-  // public static defaultProps: IButtonProps = {
-  //   type: "button",
-  //   theme: "default",
-  //   color: "gray",
-  //   radius: "radius8",
-  // };
- const ref= useRef()
-
-  useEffect(()=>{
-    if (props.refCallBack) {
-          props.refCallBack(ref);
+/* const detectRippleColor = (props: IButtonProps): string => {
+  if (!props.rippleColor) {
+    switch (props.theme) {
+      case "bordered":
+        switch (props.color) {
+          case "red":
+            return "rgba(229,0,25,0.12)";
+          case "green":
+            return "rgba(21,182,142,0.12)";
+          case "blue":
+            return "rgba(36,193,242,0.12)";
+          case "yellow":
+            return "rgb(254,175,38,0.12)";
+          default:
+          case "gray":
+            return "rgb(47,47,47,0.12)";
         }
-  },[])
+        break;
+      case "text":
+        switch (props.color) {
+          case "red":
+            return "rgba(229,0,25,0.12)";
+          case "green":
+            return "rgba(21,182,142,0.12)";
+          case "blue":
+            return "rgba(36,193,242,0.12)";
+          case "yellow":
+            return "rgba(254,175,38,0.12)";
+          default:
+          case "gray":
+            return "rgb(47,47,47,0.12)";
+        }
+        break;
+      default:
+      case "default":
+        switch (props.color) {
+          default:
+          case "lightGray":
+            return "rgba(0,0,0,0.12)";
+        }
+        return "rgba(255,255,255,0.12)";
+    }
+    return "rgba(0,0,0,0.12)";
+  }
 
+  return String(props?.rippleColor);
+}; */
 
+class Button<P = unknown> extends Component<
+  P & IButtonProps & unknown,
+  IButtonStates
+> {
+  public static defaultProps: IButtonProps = {
+    type: "button",
+    theme: "default",
+    color: "gray",
+    radius: "radius8",
+  };
+
+  // public state: IButtonStates = {
+  //   rippleColor: detectRippleColor(this.props),
+  // };
+
+  componentDidMount = (): void => {
+    if (this.props.refCallBack) {
+      this.props.refCallBack(this);
+    }
+  };
 
   /* componentDidUpdate = (prevProps: Readonly<P & IButtonProps>): void => {
-    if (prevProps.rippleColor !== .props.rippleColor) {
+    if (prevProps.rippleColor !== this.props.rippleColor) {
       // eslint-disable-next-line react/no-did-update-set-state
-      .setState({
-        rippleColor: detectRippleColor(.props),
+      this.setState({
+        rippleColor: detectRippleColor(this.props),
       });
     }
   }; */
@@ -60,41 +110,42 @@ const  Button = (props:IButtonProps)=> {
   /*  onClick = (e: React.MouseEvent<HTMLDivElement>): void => {
     e.preventDefault();
     if (
-      !(.props?.isDisabled || .props.isLoading) &&
-      .props?.onClick
+      !(this.props?.isDisabled || this.props.isLoading) &&
+      this.props?.onClick
     ) {
-      .props.onClick(e);
+      this.props.onClick(e);
     }
   }; */
 
- const generateClasses = (): string => {
+  generateClasses = (): string => {
     return generateClassName([
       style.acButton,
-      props.className,
-      props.isDisabled && style.isDisabled,
-      style[`acTheme-${props.theme}`],
-      style[`acColor-${props.color}`],
-      style[`acSize-${props.size}`],
-      style[`acRadius-${props.radius}`],
-      props.isLoading && style.isLoading,
+      this.props.className,
+      this.props.isDisabled && style.isDisabled,
+      style[`acTheme-${this.props.theme}`],
+      style[`acColor-${this.props.color}`],
+      style[`acSize-${this.props.size}`],
+      style[`acRadius-${this.props.radius}`],
+      this.props.isLoading && style.isLoading,
     ]);
   };
 
+  render() {
     return (
       <button
-        onClick={props.onClick}
-        type={props.type}
-        disabled={!!props?.isDisabled}
-        className={generateClasses()}>
-        {props.isLoading && (
+        onClick={this.props.onClick}
+        type={this.props.type}
+        disabled={!!this.props?.isDisabled}
+        className={this.generateClasses()}>
+        {this.props.isLoading && (
           <div className={style.loadingParent}>
             <LoadingSpin theme="white" className={style.loading} />
           </div>
         )}
         {/*      <Ripples
-
+ 
           color={
-            .props.isDisabled ? "transparent" : .state?.rippleColor
+            this.props.isDisabled ? "transparent" : this.state?.rippleColor
           }
           className={style.acRipple}
         /> */}
@@ -103,13 +154,13 @@ const  Button = (props:IButtonProps)=> {
           className={generateClassName([
             style.acContent,
             "d-flex flex-over-center",
-            !!props.wrap && "flex-wrap",
+            !!this.props.wrap && "flex-wrap",
           ])}>
-          {props.children}
+          {this.props.children}
         </div>
       </button>
     );
-
+  }
 }
 
 export default Button;

@@ -1,0 +1,20 @@
+@import "../../../../../../Resources/css/base"
+
+.icon
+  transition: all 0.2s ease-in-out
+  &.active
+    color: $red-ed303d
+    transform: rotate(180deg)
+.collapse
+  max-width: 153px
+  position: absolute
+  top: $space-32
+  left: $space-8
+  padding: $space-16
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.08)
+  opacity: 0
+  visibility: hidden
+  transition: all 0.1s ease-in-out
+  &.active
+    visibility: visible
+    opacity: 1
